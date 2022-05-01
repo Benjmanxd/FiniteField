@@ -133,10 +133,21 @@ class GFLookup {
         } 
 
     public:
-        GFLookup (int size) : order(size), size(std::pow(GF, size)) {
+        GFLookup(int size) : order(size), size(std::pow(GF, size)) {
             ConstructAddMulInvTable();
             ConstructAddTable();
             ConstructMulTable();
+        }
+
+        ~GFLookup() {
+            delete [] addInv;
+            delete [] mulInv;
+            for (int i = 0; i < size; ++i) {
+                delete add[i];
+                delete mul[i];
+            }
+            delete [] add;
+            delete [] mul;
         }
 
         void printTable(table x = ALL) const {
