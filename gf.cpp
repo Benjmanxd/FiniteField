@@ -94,21 +94,21 @@ class GFLookup {
         // === print function ===
         void PrintAddMulInvTable() const {
             std::cout << "=== Print Additive / Multiplicative Inverse Table ===" << std::endl;
-            std::cout << std::setw(4) << "x |" << std::setw(7) << "-x" << "|" << std::setw(7) << "x^-1" << "|" << std::endl;
+            std::cout << std::setw(5) << "x |" << std::setw(7) << "-x" << "|" << std::setw(7) << "x^-1" << "|" << std::endl;
             for (int i = 0; i < size; ++i) {
-                std::cout << std::setfill(' ') << std::setw(4) << i << " |" << std::setw(7) << addInv[i] << "|" << std::setw(7);//std::bitset<IND>(addInv[i]) << "|" << std::setw(7);
+                std::cout << std::setw(3) << i << " |" << std::setw(7) << addInv[i] << "|" << std::setw(7);//std::bitset<IND>(addInv[i]) << "|" << std::setw(7);
                 if (mulInv[i] == -1) std::cout << "UND" << "|" << std::endl;
                 else std::cout << mulInv[i] << "|" << std::endl;//std::bitset<IND>(mulInv[i]) << std::endl;
             }
         }
         void PrintAddTable() const {
             std::cout << "=== Print Additive Table ===" << std::endl;
-            std::cout << std::setw(4) << "x |";
+            std::cout << std::setw(5) << "x |";
             for (int i = 0; i < size; ++i)
                 std::cout << std::setw(7) << i  << "|";
             std::cout << std::endl;
             for (int i = 0; i < size; ++i) {
-                std::cout << std::setw(2) << i << " |";
+                std::cout << std::setw(3) << i << " |";
                 for (int j = 0; j < size; ++j)
                     std::cout << std::setw(7) << add[i][j] << "|";//std::bitset<IND>(add[i][j]) << "|";
                 std::cout << std::endl;
@@ -116,12 +116,12 @@ class GFLookup {
         }
         void PrintMulTable() const {
             std::cout << "=== Print Multiplicative Table ===" << std::endl;
-            std::cout << std::setw(4) << "x |";
+            std::cout << std::setw(5) << "x |";
             for (int i = 0; i < size; ++i)
                 std::cout << std::setw(7) << i  << "|";
             std::cout << std::endl;
             for (int i = 0; i < size; ++i) {
-                std::cout << std::setw(2) << i << " |";
+                std::cout << std::setw(3) << i << " |";
                 for (int j = 0; j < size; ++j)
                     std::cout << std::setw(7) << mul[i][j] << "|";//std::bitset<IND>(mul[i][j]) << "|";
                 std::cout << std::endl;
