@@ -20,3 +20,6 @@ The implementation uses a few intrinsics, experimented in hello_world.cpp.
 
 ## hello_world.cpp
 This file experimented the intrinsics function, with some simple manipulation of intrinsics vector operations.
+
+## gf8.txt
+The gf(8) table generated using gf.cpp, only the multiplicative inverse field is incorrect.
